@@ -38,7 +38,7 @@ purchaseItems = arr => {
 
 // function Round to nearest .05
 roundToNearestHund = num => {
-  const result = (Math.ceil(num * 20 - 0.4) / 20).toFixed(2);
+  const result = Number((Math.ceil(num * 20 - 0.4) / 20).toFixed(2));
   return result;
 };
 
@@ -47,7 +47,7 @@ applyTax = (item, taxRate) => {
   // tax calucated
   const taxCalc = roundToNearestHund(item.price * taxRate);
   const result = Number(taxCalc) + Number(item.price);
-  item.price = result.toFixed(2);
+  item.price = Number(result.toFixed(2));
   return { salesTax: taxCalc, total: item.price };
 };
 
