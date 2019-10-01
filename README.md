@@ -2,6 +2,7 @@
 
 Sales-Taxes
 Created as a coding exercise.
+SalesTax Coding Exercise.docx - File provided with instructions.
 
 The Problem:
 Basic sales tax applicable at rate of 10% on all goods, except books, food, and medical products that are exempt. Import duty is an additional sales tax applicaple on all imported goods at a rate of 5%, with no exemptions.
