@@ -1,5 +1,7 @@
 purchaseItems = arr => {
+  // initialize new array to store grand total and sales tax totals
   const itemizedReceipt = [];
+  // loop through each item in array
   arr.forEach(e => {
     // substring of items that are sales tax exempt
     const salesTaxExempt = [
@@ -10,16 +12,16 @@ purchaseItems = arr => {
       "packet of headache pills"
     ];
 
-    //  check if item string includes the word imported
+    //  check if item str includes the word imported
     if (e.item.includes("imported")) {
-      // check if the imported item is sales tax exempt
+      // check if the imported item is sales tax exempt apply 5% else apply 15% tax
       if (salesTaxExempt.some(substring => e.item.includes(substring))) {
         itemizedReceipt.push(applyTax(e, 0.05));
       } else {
         itemizedReceipt.push(applyTax(e, 0.15));
       }
     }
-    // if item is not imported check if tax exempt
+    // if item is not imported check if tax exempt else apply 10% tax
     else {
       if (salesTaxExempt.some(substring => e.item.includes(substring))) {
         itemizedReceipt.push(applyTax(e, 0));
@@ -36,13 +38,13 @@ purchaseItems = arr => {
   return console.log("Output:", output);
 };
 
-// function Round to nearest .05
+// function Round to nearest hundreth
 roundToNearestHund = num => {
   const result = Number((Math.ceil(num * 20 - 0.4) / 20).toFixed(2));
   return result;
 };
 
-// function that applies tax accordingly
+// function that applies tax according to tax rate passed as param
 applyTax = (item, taxRate) => {
   // tax calucated
   const taxCalc = roundToNearestHund(item.price * taxRate);
@@ -82,7 +84,7 @@ const input3 = [
   { item: "box of imported chocolates", qty: 1, price: 11.25 }
 ];
 
-// function executed to print receipt
+// function executed and print receipt
 purchaseItems(input1);
 purchaseItems(input2);
 purchaseItems(input3);
