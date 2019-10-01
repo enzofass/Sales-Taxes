@@ -1,0 +1,27 @@
+{
+  "name": "Sales-Taxes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enzofass/Sales-Taxes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enzofass/Sales-Taxes/issues"
+  },
+  "homepage": "https://github.com/enzofass/Sales-Taxes#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "jest": "^24.9.0"
+  }
+}
